@@ -4,6 +4,7 @@ import { Wrapper } from '../../styledHelpers/Components';
 import { Colors } from '../../styledHelpers/Colors';
 
 const LeftMenuWrapper = styled(Wrapper)`
+    box-shadow: none;
     width: 230px;
     height: 400px;
     background: ${Colors.white};
@@ -51,7 +52,7 @@ const ActionsBox = styled.div`
     width: 200px;
     height: 70px;
     margin-top: 0;
-    // border: 1px solid red;
+    // border: 1px solid black;
     border-radius: 3%;
     padding: 0;
     text-align: bottom;
@@ -60,7 +61,7 @@ const ActionsBox = styled.div`
 `;
 
 const NetworkBox = styled.div`
-    // border: 1px solid black;
+    // border: 1px solid yellow;
     width: 190px;
     height: 25px;
     margin-top: 6px;

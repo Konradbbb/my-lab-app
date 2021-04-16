@@ -9,6 +9,7 @@ import { ExpandedMenu } from './ExpandedMenu';
 
 
 const Wrapper2 = styled(Wrapper)`
+    margin: 10px 10px 10px 10px;
     padding: 8px;
 `;
 
@@ -28,7 +29,6 @@ width: 500px;
 margin: 10px auto;
 display: flex;
 justify-content: space-between;
-// border: 1px solid grey;
 
 `;
 
