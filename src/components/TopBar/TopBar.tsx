@@ -11,6 +11,9 @@ import { ExpandedMenu } from './ExpandedMenu';
 const Wrapper2 = styled(Wrapper)`
     margin: 10px 10px 10px 10px;
     padding: 8px;
+    // height: 0px;
+    // border: 1px solid grey;
+    // position: sticky;
 `;
 
 const InnerWrapper = styled.div`
@@ -62,7 +65,7 @@ export const TopBar: FC = () => {
                 <CustomImg src ="./media/icons/logo.png" width="30px" height="30px" />
                 </LeftIcon>
                 
-                    {/* <ExpandedMenu />                */}
+                    <ExpandedMenu />               
                 <InputWrapper>
                     <CustomInput type="text" />
                     <CustomImg src="./media/icons/search.png" />

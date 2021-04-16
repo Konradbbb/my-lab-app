@@ -3,25 +3,54 @@ import styled from 'styled-components';
 
 import { TopBar } from '../TopBar/TopBar';
 import { LeftMenu } from '../LeftMenu/LeftMenu';
+import { Colors } from '../../styledHelpers/Colors';
 
-const Wrapper = styled.div`
+const MainWrapper = styled.div`
+
 `;
 
 const Conent = styled.div`
-    max-width: 1200px;
-    align-items: center;
+    max-width: 100%;
+    height: 900px;
+    // align-items: center;
     display: flex;
+    // border: 1px solid grey;
     `;
+
+const ContetBoxes = styled.div`
+    // border: 1px solid red;
+    width: 100%;
+    height: 850px;
+    margin: 14px 25px 14px 0;
+    padding: 10px;
+    padding-top: 0;
+
+`;
+
+const MiniBoxes = styled.div`
+    // border: 1px solid purple;
+    width: 98%;
+    height: 250px;
+    margin: 15px;
+    margin-top: 0;
+    box-shadow: 1px 1px 3px grey;
+    // background: purple;
+`;
 
      const MainPage: FC = () => {
         return (
-            <Wrapper>
+            <MainWrapper>
                 <TopBar />
                 <Conent>
                     <LeftMenu />
-                    <div>content</div>
+                    <ContetBoxes>
+                        <MiniBoxes/>
+                        <MiniBoxes/>
+                        <MiniBoxes/>
+                    </ContetBoxes>
+                   
                 </Conent>
-            </Wrapper>
+            </MainWrapper>
         );           
     };
 
