@@ -11,7 +11,8 @@ const LeftMenuWrapper = styled(Wrapper)`
     // border: 1px solid green;
     border-radius: 1.5%;
     margin: 14px;
-    padding: 0;
+    // padding: 0;
+    margin-left: 30px;
     display: block;
 
 `;
@@ -32,8 +33,8 @@ const BoxesWrapper = styled.div`
     height: 195px;
     padding: 0;
     // border: 1px solid red;
-    box-shadow: 1px 1px 3px grey;
-    margin-left: 10px;
+    box-shadow: 1px 1px 5px grey;
+    // margin-left: 10px;
     padding: 3px;
 `;
 

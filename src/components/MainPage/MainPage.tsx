@@ -6,7 +6,10 @@ import { LeftMenu } from '../LeftMenu/LeftMenu';
 import { Colors } from '../../styledHelpers/Colors';
 
 const MainWrapper = styled.div`
-
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    background: #FAFDFF;
 `;
 
 const Conent = styled.div`
@@ -29,11 +32,13 @@ const ContetBoxes = styled.div`
 
 const MiniBoxes = styled.div`
     // border: 1px solid purple;
+    background: ${Colors.white};
     width: 98%;
     height: 250px;
     margin: 15px;
     margin-top: 0;
-    box-shadow: 1px 1px 3px grey;
+    box-shadow: 1px 1px 2px grey;
+    border-radius: 4px;
     // background: purple;
 `;
 

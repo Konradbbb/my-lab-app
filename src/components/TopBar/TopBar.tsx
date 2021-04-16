@@ -14,11 +14,12 @@ const Wrapper2 = styled(Wrapper)`
     // height: 0px;
     // border: 1px solid grey;
     // position: sticky;
+    background: ${Colors.white};
+
 `;
 
 const InnerWrapper = styled.div`
     width: 100%;
-    background: ${Colors.white};
     
 `;
 
@@ -45,6 +46,7 @@ const CustomInput = styled.input`
     width: 500px;
     border-radius: 9px;
     display: flex;
+    border: 1px solid grey;
     
 `;
 
@@ -67,7 +69,7 @@ export const TopBar: FC = () => {
                 
                     <ExpandedMenu />               
                 <InputWrapper>
-                    <CustomInput type="text" />
+                    <CustomInput type="text" placeholder="Search Legalcluster"/>
                     <CustomImg src="./media/icons/search.png" />
                 </InputWrapper>
                     <RightIcons>
