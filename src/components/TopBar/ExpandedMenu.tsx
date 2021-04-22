@@ -16,6 +16,17 @@ const ExpandedWrapperMenu = styled.div`
     border: 1px solid grey;
     border-radius: 2px;
 
+    animation-name: example;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    
+
+    @keyframes example {
+        
+        from {top: 0px;}
+        to {top: 100%;}
+      }
+
 `;
 
 const ExtendedMenuInput = styled.input`
@@ -46,6 +57,7 @@ const MenuListTextBox = styled(BottomTextBox)`
     font-size: 13px;
     font-weight: normal;
     // border: 1px solid green;
+  
 
 `;
 
@@ -65,6 +77,11 @@ const ListElement = styled(BottomMenuBoxes)`
     margin: 1%;
     margin-left: 3%;
     // overflow: scroll;
+
+    &: hover {
+        border-radius: 5px;
+        background: lightblue;
+    }
 `;
 
 const ExpandedMenuProfilePicture = styled(Picture)`
@@ -72,7 +89,8 @@ const ExpandedMenuProfilePicture = styled(Picture)`
     width: 35px;  
     margin: 3px 3%;
     &:hover {
-        transform: ;
+        transform: rotate(180deg);
+        animation-duration: 5s;
     }
 `;
 
@@ -85,24 +103,31 @@ const ProfileBox = styled(ExpandedMenuList)`
 `;
 
 const LogoutBox = styled.div`
-    height: 30px;
+    height: 20px;
     width: 100%;
     border-top: 1px solid grey;
     padding-top: 3%;
     display: flex;
     justify-content: center;
+    &:hover {
+        background: lightblue;
+        border-radius: 5px;
+        cursor: pointer;
+        color: blue;
+    }
 `;
 
 const LogoutText = styled(MenuListTextBox)`
     margin-left: 7px;
     color: grey;
     height: 15px;
+   
 `;
 
 const AccountMainBox = styled.div`
     height: 40px;
     width: 99%;
-    border: 1px solid grey;
+    // border: 1px solid grey;
     display: flex;
     
 `;
@@ -110,7 +135,7 @@ const AccountMainBox = styled.div`
 const AccountInformationsBox = styled.div`
     height: 39px;
     width: 100%;
-    border: 1px solid red;
+    // border: 1px solid red;
     display: grid;
     // padding-top: 2%;
     // padding-right: 15%;
@@ -120,7 +145,7 @@ const SeeProfileText = styled(MenuListTextBox)`
     color: blue;
     font-size: 10px;
     font-weight: bold; 
-    border: 1px solid blue;
+    // border: 1px solid blue;
     margin: 0 3%;
     width: 50%;
 `;
@@ -128,7 +153,7 @@ const SeeProfileText = styled(MenuListTextBox)`
 const ProfilNameText = styled(MenuListTextBox)`
     margin-left: 3%;
     width: 80%;
-    border: 1px solid black;
+    // border: 1px solid black;
     margin-top: 0;
 `;
 

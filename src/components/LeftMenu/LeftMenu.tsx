@@ -70,6 +70,12 @@ const NetworkBox = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    &:hover {
+        background: lightblue;
+        border-radius: 5px;
+
+    }
 `;
 
 const PublicationsBox = styled(NetworkBox)`
