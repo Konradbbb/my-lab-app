@@ -64,7 +64,7 @@ const ListElement = styled(BottomMenuBoxes)`
     border-radius: 5px;
     margin: 1%;
     margin-left: 3%;
-    overflow: scroll;
+    // overflow: scroll;
 `;
 
 const ExpandedMenuProfilePicture = styled(Picture)`
@@ -102,7 +102,7 @@ const LogoutText = styled(MenuListTextBox)`
 const AccountMainBox = styled.div`
     height: 40px;
     width: 99%;
-    // border: 1px solid grey;
+    border: 1px solid grey;
     display: flex;
     
 `;
@@ -110,7 +110,7 @@ const AccountMainBox = styled.div`
 const AccountInformationsBox = styled.div`
     height: 39px;
     width: 100%;
-    // border: 1px solid red;
+    border: 1px solid red;
     display: grid;
     // padding-top: 2%;
     // padding-right: 15%;
@@ -120,7 +120,7 @@ const SeeProfileText = styled(MenuListTextBox)`
     color: blue;
     font-size: 10px;
     font-weight: bold; 
-    // border: 1px solid blue;
+    border: 1px solid blue;
     margin: 0 3%;
     width: 50%;
 `;
@@ -128,7 +128,7 @@ const SeeProfileText = styled(MenuListTextBox)`
 const ProfilNameText = styled(MenuListTextBox)`
     margin-left: 3%;
     width: 80%;
-    // border: 1px solid black;
+    border: 1px solid black;
     margin-top: 0;
 `;
 
@@ -240,11 +240,14 @@ export const ExpandedMenu: FC = () => {
                     <LeftPicturesInBoxes src="./media/icons/privacy.svg"/>
                     <MenuListTextBox>Privacy</MenuListTextBox>
                 </ListElement>
+
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/settings.svg"/>
                     <MenuListTextBox>Setting</MenuListTextBox>
                 </ListElement>
+            
             </ProfileBox>
+
             <LogoutBox>
                     <LeftPicturesInBoxes src="./media/icons/logout.svg" height="15px" width="15px"/>
                     <LogoutText>Logout</LogoutText>
