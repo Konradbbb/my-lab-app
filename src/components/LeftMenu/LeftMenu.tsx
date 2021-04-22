@@ -6,7 +6,7 @@ import { Colors } from '../../styledHelpers/Colors';
 const LeftMenuWrapper = styled(Wrapper)`
     box-shadow: none;
     width: 230px;
-    height: 400px;
+    height: 195px;
     background: ${Colors.white};
     // border: 1px solid green;
     border-radius: 1.5%;
@@ -17,7 +17,7 @@ const LeftMenuWrapper = styled(Wrapper)`
 
 `;
 
-const Picture = styled.img`
+export const Picture = styled.img`
     margin: 15px;
     height: 50px;
     width: 50px;
@@ -40,14 +40,14 @@ const BoxesWrapper = styled.div`
 
 const PictureBox = styled.div`
     width: 200px;
-    height: 110px;
+    height: 130px;
     text-align: bottom;
     margin-top: 1px;
     // border: 1px solid black;
     border-radius: 1%;
     padding: 0;
     border-bottom: 1px solid grey;
-
+    display: grid;
 `; 
 const ActionsBox = styled.div`
     width: 200px;
@@ -62,16 +62,14 @@ const ActionsBox = styled.div`
 `;
 
 const NetworkBox = styled.div`
-    // border: 1px solid yellow;
+    // border: 1px solid grey;
     width: 190px;
     height: 25px;
     margin-top: 6px;
     margin-left: 4px;
-    // display: inline-grid;
-    // grid-auto-flow: column;
-    // gap: 1rem;
-    // flex-wrap: wrap;
-    // flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 `;
 
 const PublicationsBox = styled(NetworkBox)`
@@ -80,26 +78,61 @@ const PublicationsBox = styled(NetworkBox)`
 
 const RightPicturesInBoxes = styled.img`
     border: 1px solid grey;
-    margin: 1px;
+    // margin: 1px;
     padding: 3px;
     border-radius: 20%;
     width: 15px;
-    
+    // position: relative;
+    // display: inline;
+    // margin-top: 2px;
+
+
 `;
 
-const LeftPicturesInBoxes = styled.img`
+export const LeftPicturesInBoxes = styled.img`
     margin-left: 5px;
-    text-align: left;
 `;
 
 const TextBox = styled.span`
     font-size: 10px;
-    vertical-align: middle;
-    margin-left: 5%;
-    margin-right: 30%;
+    margin-left: -30px;
+    font-family: Arial;
+    font-weight: bold;  
+`;
+
+const BottomBoxConent = styled.div`
+    width: 200px;
+    height: 110px;
+    // border: 1px solid black;
+    display: block;
+    margin-top: 20px;
+`;
+
+export const BottomMenuBoxes = styled(NetworkBox)`
+    // border: 1px solid black;
+    justify-content: flex-start;
     
 `;
 
+export const BottomTextBox = styled(TextBox)`
+    margin-left: 15px;
+`;
+
+const PictureTextBox = styled.span`
+    margin-left: 0%;
+    text-align: center;
+    color: #3366cc; 
+    // border: 1px solid grey;
+    font-family: Arial;
+`;
+
+const SmallPictureTextBox = styled.span`
+    font-size: 9px;
+    text-align: center;
+    margin-left: 0%;
+    font-family: Arial;
+    font-weight: bold;
+`;
 
 
 export const LeftMenu: FC = () => {
@@ -108,22 +141,39 @@ export const LeftMenu: FC = () => {
 
             <BoxesWrapper>
                 <PictureBox>
-                    <Picture src ="./media/icons/administration.png" />
-
+                    <Picture src ="./media/icons/administration.svg" height="10px" width="10px" />
+                    <PictureTextBox>Konrad Baran</PictureTextBox>
+                    <SmallPictureTextBox>Logan Kapuczino</SmallPictureTextBox>
                 </PictureBox>
                 <ActionsBox>    
                     <NetworkBox>
-                        <LeftPicturesInBoxes src="./media/icons/network.png"/>
+                        <LeftPicturesInBoxes src="./media/icons/network.svg" height="20px" width="20px"/>
                             <TextBox>Your network</TextBox>
-                        <RightPicturesInBoxes src="./media/icons/user-plus.png"/>
+                        <RightPicturesInBoxes src="./media/icons/user-plus.svg"/>
                     </NetworkBox>
                     <PublicationsBox>
-                        <LeftPicturesInBoxes src="./media/icons/publications.png"/>
-                            <TextBox>Your publications </TextBox>
-                        <RightPicturesInBoxes src="./media/icons/plus.png" width="5px" height="11px"/>
+                        <LeftPicturesInBoxes src="./media/icons/publications.svg"/>
+                            <TextBox>Your publications</TextBox>
+                        <RightPicturesInBoxes src="./media/icons/plus.svg" width="5px" height="11px"/>
                     </PublicationsBox>
                 </ActionsBox>           
             </BoxesWrapper>
+
+            <BottomBoxConent>
+                <BottomMenuBoxes>
+                    <LeftPicturesInBoxes src="./media/icons/publications.svg"/>
+                    <BottomTextBox>Publications</BottomTextBox>
+                </BottomMenuBoxes>
+                <BottomMenuBoxes>
+                <LeftPicturesInBoxes src="./media/icons/ecosystem.svg"/>
+                    <BottomTextBox>Ecosystem</BottomTextBox>
+                </BottomMenuBoxes>
+                <BottomMenuBoxes>
+                <LeftPicturesInBoxes src="./media/icons/entities.svg" height="20px" width="20px"/>
+                    <BottomTextBox>Entities</BottomTextBox>
+                </BottomMenuBoxes>
+            </BottomBoxConent>
+
             
         
         </LeftMenuWrapper>

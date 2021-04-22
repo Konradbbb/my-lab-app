@@ -42,6 +42,7 @@ const MiniBoxes = styled.div`
     // background: purple;
 `;
 
+
      const MainPage: FC = () => {
         return (
             <MainWrapper>
