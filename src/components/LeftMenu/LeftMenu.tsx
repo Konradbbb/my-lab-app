@@ -11,9 +11,10 @@ const LeftMenuWrapper = styled(Wrapper)`
     // border: 1px solid green;
     border-radius: 1.5%;
     margin: 14px;
-    // padding: 0;
     margin-left: 30px;
     display: block;
+    padding: 0;
+    padding-bottom: 6px;
 
 `;
 
@@ -88,10 +89,6 @@ const RightPicturesInBoxes = styled.img`
     padding: 3px;
     border-radius: 20%;
     width: 15px;
-    // position: relative;
-    // display: inline;
-    // margin-top: 2px;
-
 
 `;
 
