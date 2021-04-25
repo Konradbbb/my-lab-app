@@ -10,14 +10,15 @@ import { ExpandedMenu } from './ExpandedMenu';
 
 
 const Wrapper2 = styled(Wrapper)`
-    margin: 10px 10px 10px 10px;
+    margin: 10px;
+    margin-top: 0;
     padding: 8px;
-    // height: 0px;
+   
     // border: 1px solid grey;
     max-height: 50px;
     position: sticky;
     background: ${Colors.white};
-
+    
 `;
 
 const InnerWrapper = styled.div`

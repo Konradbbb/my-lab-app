@@ -6,10 +6,13 @@ import { LeftMenu } from '../LeftMenu/LeftMenu';
 import { Colors } from '../../styledHelpers/Colors';
 
 const MainWrapper = styled.div`
-    height: 100%;
+    height: 1050px;
     width: 100%;
-    border: 1px solid black;
-    background: #FAFDFF;
+    padding-top: 10px;
+    // border: 1px solid black;
+    background: ${Colors.erty};
+    // background: navy;
+    margin: 0;
 `;
 
 const Conent = styled.div`
@@ -41,7 +44,6 @@ const MiniBoxes = styled.div`
     border-radius: 4px;
     // background: purple;
 `;
-
 
      const MainPage: FC = () => {
         return (

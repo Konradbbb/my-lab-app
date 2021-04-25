@@ -15,6 +15,7 @@ const ExpandedWrapperMenu = styled.div`
     top: 100%;
     border: 1px solid grey;
     border-radius: 2px;
+    border-top: none;
 
     animation-name: example;
     animation-duration: 1s;
@@ -113,7 +114,6 @@ const LogoutBox = styled.div`
         background: lightblue;
         border-radius: 5px;
         cursor: pointer;
-        color: blue;
     }
 `;
 
