@@ -4,6 +4,22 @@ import styled from 'styled-components';
 import { TopBar } from '../TopBar/TopBar';
 import { LeftMenu } from '../LeftMenu/LeftMenu';
 import { Colors } from '../../styledHelpers/Colors';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Link,
+    Route
+} from 'react-router-dom';
+import { Entities } from '../../RoutingComponents/Entities';
+import { Ecosystem } from '../../RoutingComponents/Ecosystem';
+import { Publications } from '../../RoutingComponents/Publications';
+import { People } from '../../RoutingComponents/People';
+import { Administration } from '../../RoutingComponents/Administration';
+import { YourPublications } from '../../RoutingComponents/YourPublications';
+import { Network } from '../../RoutingComponents/Network';
+import { MyProfile } from '../../RoutingComponents/MyProfile';
+
+
 
 const MainWrapper = styled.div`
     height: 1050px;
@@ -47,18 +63,65 @@ const MiniBoxes = styled.div`
 
      const MainPage: FC = () => {
         return (
+        <Router>
             <MainWrapper>
                 <TopBar />
                 <Conent>
                     <LeftMenu />
                     <ContetBoxes>
-                        <MiniBoxes/>
-                        <MiniBoxes/>
-                        <MiniBoxes/>
-                    </ContetBoxes>
-                   
+                        <Switch>
+
+                            <Route path="/entities" exact>
+                                <Entities />
+                            </Route>
+
+                            <Route path="/ecosystem" exact>
+                                <Ecosystem />
+                            </Route>
+
+                            <Route path="/publications" exact>
+                                <Publications />
+                            </Route>
+
+                            <Route path="/people" exact>
+                                <People />
+                            </Route>
+
+                            <Route path="/administration" exact>
+                                <Administration/>
+                            </Route>
+
+                            <Route path="/home" exact>
+                                <MiniBoxes/>
+                                <MiniBoxes/>
+                                <MiniBoxes/>
+                            </Route>
+
+                            <Route path="/" exact>
+                                <MiniBoxes/>
+                                <MiniBoxes/>
+                                <MiniBoxes/>
+                            </Route>
+
+                            <Route path='/your_publications' exact>
+                                <YourPublications/>
+                            </Route>
+
+                            <Route path='/network' exact>
+                                <Network/>
+                            </Route>
+
+                            <Route path='/my_profile' exact>
+                                <MyProfile/>
+                            </Route>
+
+                        </Switch>
+                       
+                    </ContetBoxes> 
                 </Conent>
             </MainWrapper>
+        </Router>
+            
         );           
     };
 

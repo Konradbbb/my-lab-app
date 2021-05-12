@@ -4,6 +4,8 @@ import { BottomMenuBoxes } from '../LeftMenu/LeftMenu';
 import { LeftPicturesInBoxes } from '../LeftMenu/LeftMenu';
 import { BottomTextBox } from '../LeftMenu/LeftMenu';
 import {Picture } from '../LeftMenu/LeftMenu';
+import {Link} from 'react-router-dom';
+import { Colors } from '../../styledHelpers/Colors';
  
 
 const ExpandedWrapperMenu = styled.div`
@@ -57,9 +59,15 @@ const Category = styled.div`
 const MenuListTextBox = styled(BottomTextBox)`
     font-size: 13px;
     font-weight: normal;
-    // border: 1px solid green;
-  
+`;
 
+const ExpandedMenuCustomLink = styled(Link)`
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: normal;
+    margin-left: 15px;
+    font-family: Arial;
+    color: ${Colors.black};
 `;
 
 const ExpandedMenuList = styled.div`
@@ -168,27 +176,27 @@ export const ExpandedMenu: FC = () => {
 
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/house2.svg"/>
-                    <MenuListTextBox>Home</MenuListTextBox>
+                    <ExpandedMenuCustomLink to='/home'>Home</ExpandedMenuCustomLink>
                 </ListElement>
 
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/publications.svg"/>
-                    <MenuListTextBox>Publications</MenuListTextBox>
+                    <ExpandedMenuCustomLink to='/publications'>Publications</ExpandedMenuCustomLink>
                 </ListElement>
 
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/people.svg"/>
-                    <MenuListTextBox>People</MenuListTextBox>
+                    <ExpandedMenuCustomLink to='/people'>People</ExpandedMenuCustomLink>
                 </ListElement>
 
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/entities2.svg"/>
-                    <MenuListTextBox>Entities</MenuListTextBox>
+                    <ExpandedMenuCustomLink to='/entities'>Entities</ExpandedMenuCustomLink>
                 </ListElement>
 
                 <ListElement>
                     <LeftPicturesInBoxes src="./media/icons/administration.svg"/>
-                    <MenuListTextBox>Administration</MenuListTextBox>
+                    <ExpandedMenuCustomLink to='/administration'>Administration</ExpandedMenuCustomLink>
                 </ListElement>
 
                 <Category>Workspaces</Category>

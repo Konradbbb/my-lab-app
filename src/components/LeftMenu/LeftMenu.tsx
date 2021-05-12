@@ -2,6 +2,7 @@ import { FC } from 'react';
 import styled from 'styled-components';
 import { Wrapper } from '../../styledHelpers/Components';
 import { Colors } from '../../styledHelpers/Colors';
+import {Link} from 'react-router-dom';
 
 const LeftMenuWrapper = styled(Wrapper)`
     box-shadow: none;
@@ -121,12 +122,24 @@ export const BottomTextBox = styled(TextBox)`
     margin-left: 15px;
 `;
 
-const PictureTextBox = styled.span`
+const CustomLink = styled(Link)`
+    font-size: 10px;
+    margin-left: -30px;
+    font-family: Arial;
+    font-weight: bold;  
+    margin-left: 15px;
+    text-decoration: none;
+    color: ${Colors.black};
+`;
+
+const PictureTextBox = styled(Link)`
     margin-left: 0%;
     text-align: center;
     color: #3366cc; 
     // border: 1px solid grey;
     font-family: Arial;
+    text-decoration: none;
+
 `;
 
 const SmallPictureTextBox = styled.span`
@@ -143,38 +156,48 @@ export const LeftMenu: FC = () => {
         <LeftMenuWrapper>
 
             <BoxesWrapper>
+
                 <PictureBox>
                     <Picture src ="./media/icons/administration.svg" height="10px" width="10px" />
-                    <PictureTextBox>Konrad Baran</PictureTextBox>
+                    <PictureTextBox to='/my_profile'>Konrad Baran</PictureTextBox>
                     <SmallPictureTextBox>Logan Kapuczino</SmallPictureTextBox>
                 </PictureBox>
-                <ActionsBox>    
+
+                <ActionsBox> 
+
                     <NetworkBox>
                         <LeftPicturesInBoxes src="./media/icons/network.svg" height="20px" width="20px"/>
-                            <TextBox>Your network</TextBox>
+                            <CustomLink to='/network'>Your network</CustomLink>
                         <RightPicturesInBoxes src="./media/icons/user-plus.svg"/>
                     </NetworkBox>
+
                     <PublicationsBox>
                         <LeftPicturesInBoxes src="./media/icons/publications.svg"/>
-                            <TextBox>Your publications</TextBox>
+                            <CustomLink to='/your_publications'>Your publications</CustomLink>
                         <RightPicturesInBoxes src="./media/icons/plus.svg" width="5px" height="11px"/>
                     </PublicationsBox>
-                </ActionsBox>           
+
+                </ActionsBox>
+
             </BoxesWrapper>
 
             <BottomBoxConent>
+
                 <BottomMenuBoxes>
                     <LeftPicturesInBoxes src="./media/icons/publications.svg"/>
-                    <BottomTextBox>Publications</BottomTextBox>
+                    <CustomLink to='/publications'>Publications</CustomLink>
                 </BottomMenuBoxes>
+
                 <BottomMenuBoxes>
-                <LeftPicturesInBoxes src="./media/icons/ecosystem.svg"/>
-                    <BottomTextBox>Ecosystem</BottomTextBox>
+                    <LeftPicturesInBoxes src="./media/icons/ecosystem.svg"/>
+                    <CustomLink to='/ecosystem'>Ecosystem</CustomLink>
                 </BottomMenuBoxes>
+
                 <BottomMenuBoxes>
                 <LeftPicturesInBoxes src="./media/icons/entities.svg" height="20px" width="20px"/>
-                    <BottomTextBox>Entities</BottomTextBox>
+                    <CustomLink to="/entities">Entities</CustomLink>
                 </BottomMenuBoxes>
+
             </BottomBoxConent>
 
             
