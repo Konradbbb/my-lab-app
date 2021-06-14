@@ -67,10 +67,12 @@ const MiniBoxes = styled.div`
             <MainWrapper>
                 <TopBar />
                 <Conent>
-                    <LeftMenu />
-                    <ContetBoxes>
-                        <Switch>
 
+                    <LeftMenu />
+
+                    <ContetBoxes>
+
+                        <Switch>
                             <Route path="/entities" exact>
                                 <Entities />
                             </Route>
@@ -114,7 +116,6 @@ const MiniBoxes = styled.div`
                             <Route path='/my_profile' exact>
                                 <MyProfile/>
                             </Route>
-
                         </Switch>
                        
                     </ContetBoxes> 

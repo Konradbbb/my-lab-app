@@ -72,6 +72,12 @@ const MenuWrapper = styled.div`
     height: 30px;
 `;
 
+const MenuExpandButtonWrapper = styled(MenuWrapper)`
+    // border: 1px solid red;
+    width: 100%;
+    left: 0%;
+`;
+
 const LeftSide = styled.div`
 
 `;
@@ -113,15 +119,20 @@ export const TopBar: FC = props => {
                 <CustomImg src ="./media/icons/logo.png" width="30px" height="30px" />
                 </LeftIcon>
 
-                    <MenuWrapper ref={wrapperRef} onClick={menuHandler}>
+                    <MenuWrapper ref={wrapperRef} >
+                        <MenuExpandButtonWrapper onClick={menuHandler}>
                         <LeftSide>
                             <MenuHomeIcon src="./media/icons/house2.svg" alt=""/>
                             <InnerSpan>Home</InnerSpan>
                         </LeftSide> 
                         <img src="./media/icons/arrow-down.svg" alt=""/>
+                        </MenuExpandButtonWrapper>
+        
                         {dropdownOpen && 
                             <ExpandedMenu /> 
                         }
+
+
                     </MenuWrapper>
                 
                                   
