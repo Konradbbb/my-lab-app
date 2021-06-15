@@ -18,11 +18,12 @@ import { Administration } from '../../RoutingComponents/Administration';
 import { YourPublications } from '../../RoutingComponents/YourPublications';
 import { Network } from '../../RoutingComponents/Network';
 import { MyProfile } from '../../RoutingComponents/MyProfile';
+import { MainContent } from '../MainConent/MainContent';
 
 
 
 const MainWrapper = styled.div`
-    height: 1050px;
+    height: 1500px;
     width: 100%;
     padding-top: 10px;
     // border: 1px solid black;
@@ -94,15 +95,11 @@ const MiniBoxes = styled.div`
                             </Route>
 
                             <Route path="/home" exact>
-                                <MiniBoxes/>
-                                <MiniBoxes/>
-                                <MiniBoxes/>
+                                <MainContent />
                             </Route>
 
                             <Route path="/" exact>
-                                <MiniBoxes/>
-                                <MiniBoxes/>
-                                <MiniBoxes/>
+                                <MainContent />
                             </Route>
 
                             <Route path='/your_publications' exact>

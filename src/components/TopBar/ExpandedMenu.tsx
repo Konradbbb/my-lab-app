@@ -6,7 +6,7 @@ import { BottomTextBox } from '../LeftMenu/LeftMenu';
 import {Picture } from '../LeftMenu/LeftMenu';
 import {Link} from 'react-router-dom';
 import { Colors } from '../../styledHelpers/Colors';
- 
+import { PublicationsLink } from '../MainConent/HeaderPublications/HeaderPublications';
 
 const ExpandedWrapperMenu = styled.div`
     position: absolute;
@@ -312,7 +312,7 @@ export const ExpandedMenu: FC = () => {
                     <ExpandedMenuProfilePicture src ="./media/icons/administration.svg"/>
                     <AccountInformationsBox>
                         <ProfilNameText>Konrad Baran</ProfilNameText>
-                        <ExpandedMenuCustomLink to='/my_profile' >See profile</ExpandedMenuCustomLink>
+                        <PublicationsLink to='/my_profile' >See profile</PublicationsLink>
                     </AccountInformationsBox>
                 </AccountMainBox>
 

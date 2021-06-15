@@ -9,13 +9,14 @@ const LeftMenuWrapper = styled(Wrapper)`
     width: 230px;
     height: 195px;
     background: ${Colors.white};
-    // border: 1px solid green;
+    border: 1px solid green;
     border-radius: 1.5%;
     margin: 14px;
     margin-left: 30px;
     display: block;
     padding: 0;
     padding-bottom: 6px;
+    // position: relative;
 
 `;
 
@@ -107,7 +108,7 @@ const TextBox = styled.span`
 const BottomBoxConent = styled.div`
     width: 200px;
     height: 110px;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: block;
     margin-top: 20px;
 `;
@@ -122,7 +123,7 @@ export const BottomTextBox = styled(TextBox)`
     margin-left: 15px;
 `;
 
-const CustomLink = styled(Link)`
+export const CustomLink = styled(Link)`
     font-size: 10px;
     margin-left: -30px;
     font-family: Arial;

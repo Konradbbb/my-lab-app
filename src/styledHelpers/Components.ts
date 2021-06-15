@@ -5,7 +5,7 @@ export type Styles = {
     [ruleOrSelector: string]: string | number | Styles,
 }
 
-const boxShadow = (): Styles => {
+export const boxShadow = (): Styles => {
     return {
         color: `${Colors.black}`
     };
