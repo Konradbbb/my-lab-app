@@ -1,8 +1,11 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import { Wrapper } from '../../../styledHelpers/Components';
 import { Colors } from '../../../styledHelpers/Colors';
 import { CustomLink } from '../../LeftMenu/LeftMenu';
+import { useSelector } from 'react-redux';
+import { IState } from '../../../reducers';
+import { IPostReducer } from '../../../reducers/postsReducers';
+import { IUsersReducer } from '../../../reducers/usersReducers';
 
 
 
@@ -112,53 +115,67 @@ const ItemDataPivture = styled.div`
 
 
 export const HeaderPublications: FC = () => {
-    return (
-        <HeaderWrapper>
-            <PicturePublications />
-            <PublicationsWrapper>
-                <HeaderTitle>Latest publications</HeaderTitle>
-                <HeaderItem>
-                    <ItemPicture/>
-                    <ItemMainText>
-                            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos totam neque...and one more line for the demo</span>
-                        <ItemInfo>
-                            <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
-                            <ItemDataPivture/>
-                            <ItemDataInfo>Konrad Baran</ItemDataInfo>
-                        </ItemInfo>
-                    </ItemMainText>
-                    
-                </HeaderItem>
 
-                <HeaderItem>
-                    <ItemPicture/>
-                    <ItemMainText>
-                            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos totam neque...and one more line for the demo</span>
-                        <ItemInfo>
-                        <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
-                            <ItemDataPivture/>
-                            <ItemDataInfo>Konrad Baran</ItemDataInfo>
-                        </ItemInfo>
-                    </ItemMainText>
-                    
-                </HeaderItem>
+    const { postList } = useSelector<IState, IPostReducer>(state => ({
+        ...state.posts
+    }));
+    const { usersList } = useSelector<IState, IUsersReducer>(state => ({
+        ...state.users
+    }));
 
-                <HeaderItem>
-                    <ItemPicture/>
+
+    if (usersList?.length > 0){
+        return (
+            <HeaderWrapper>
+                <PicturePublications />
+                <PublicationsWrapper>
+                    <HeaderTitle>Latest publications</HeaderTitle>
+                    <HeaderItem>
+                        <ItemPicture/>
                         <ItemMainText>
-                           <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos totam neque...and one more line for the demo</span>
+                                <span className="PublicationText">{postList[0].body}</span>
                             <ItemInfo>
                                 <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
                                 <ItemDataPivture/>
-                                <ItemDataInfo>Konrad Baran</ItemDataInfo>
+                                <ItemDataInfo>{usersList[0].name}</ItemDataInfo>
                             </ItemInfo>
                         </ItemMainText>
-                      
-                </HeaderItem>
-
-                <PublicationsLink to="/publications">See more publications</PublicationsLink>
-            </PublicationsWrapper>
-        </HeaderWrapper>
-
-    );
+                        
+                    </HeaderItem>
+    
+                    <HeaderItem>
+                        <ItemPicture/>
+                        <ItemMainText>
+                                <span className="PublicationText">{postList[1].body}</span>
+                            <ItemInfo>
+                            <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
+                                <ItemDataPivture/>
+                                <ItemDataInfo>{usersList[1].name}</ItemDataInfo>
+                            </ItemInfo>
+                        </ItemMainText>
+                        
+                    </HeaderItem>
+    
+                    <HeaderItem>
+                        <ItemPicture/>
+                            <ItemMainText>
+                               <span className="PublicationText">{postList[2].body}</span>
+                                <ItemInfo>
+                                    <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
+                                    <ItemDataPivture/>
+                                    <ItemDataInfo>{usersList[2].name}</ItemDataInfo>
+                                </ItemInfo>
+                            </ItemMainText>
+                          
+                    </HeaderItem>
+    
+                    <PublicationsLink to="/publications">See more publications</PublicationsLink>
+                </PublicationsWrapper>
+            </HeaderWrapper>
+    
+        )} else {
+            return <></>
+        }
+        
+    
 };

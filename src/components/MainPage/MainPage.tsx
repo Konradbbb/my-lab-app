@@ -10,7 +10,7 @@ import {
     Link,
     Route
 } from 'react-router-dom';
-import { Entities } from '../../RoutingComponents/Entities';
+import { Entities } from '../../Entities/Entities';
 import { Ecosystem } from '../../RoutingComponents/Ecosystem';
 import { Publications } from '../../RoutingComponents/Publications';
 import { People } from '../../RoutingComponents/People';
