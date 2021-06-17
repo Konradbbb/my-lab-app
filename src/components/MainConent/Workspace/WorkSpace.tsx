@@ -9,16 +9,19 @@ const WorkSpaceWrapper = styled(HeaderWrapper)`
     display: flex;
     background: ${Colors.erty};
     box-shadow: none;
+
 `;
 
 const WorkSpaceItems = styled.div`
     // border: 1px solid red;
     margin: 2%;
+    // margin-top: 50px;
     height: 80%;
     width: 25%;
     display: block;
     border-radius: 6px;
     background: ${Colors.white};
+    box-shadow: 1px 1px 2px grey;
 `;
 
 const ItemIcon = styled(PicturePublications)`

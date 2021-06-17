@@ -9,7 +9,7 @@ const LeftMenuWrapper = styled(Wrapper)`
     width: 230px;
     height: 195px;
     background: ${Colors.white};
-    border: 1px solid green;
+    // border: 1px solid green;
     border-radius: 1.5%;
     margin: 14px;
     margin-left: 30px;
@@ -86,7 +86,7 @@ const PublicationsBox = styled(NetworkBox)`
 `;
 
 const RightPicturesInBoxes = styled.img`
-    border: 1px solid grey;
+    // border: 1px solid grey;
     // margin: 1px;
     padding: 3px;
     border-radius: 20%;
@@ -108,7 +108,7 @@ const TextBox = styled.span`
 const BottomBoxConent = styled.div`
     width: 200px;
     height: 110px;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: block;
     margin-top: 20px;
 `;

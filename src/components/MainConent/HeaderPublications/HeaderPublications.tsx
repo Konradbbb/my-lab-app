@@ -174,7 +174,54 @@ export const HeaderPublications: FC = () => {
             </HeaderWrapper>
     
         )} else {
-            return <></>
+            return (
+                <HeaderWrapper>
+                <PicturePublications />
+                <PublicationsWrapper>
+                    <HeaderTitle>Latest publications</HeaderTitle>
+                    <HeaderItem>
+                        <ItemPicture/>
+                        <ItemMainText>
+                                <span className="PublicationText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam impedit necessitatibus obcaecati quasi harum suscipit modi voluptate quas ex cum esse labore quibusdam beatae, aut, doloremque soluta rerum quod repellat?</span>
+                            <ItemInfo>
+                                <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
+                                <ItemDataPivture/>
+                                <ItemDataInfo>Konrad Baran</ItemDataInfo>
+                            </ItemInfo>
+                        </ItemMainText>
+                        
+                    </HeaderItem>
+    
+                    <HeaderItem>
+                        <ItemPicture/>
+                        <ItemMainText>
+                                <span className="PublicationText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel necessitatibus debitis totam corporis nisi unde hic doloremque quam possimus quis iusto iure eaque ad repellendus, mollitia, ipsum similique est et?</span>
+                            <ItemInfo>
+                            <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
+                                <ItemDataPivture/>
+                                <ItemDataInfo>Konrad Baran</ItemDataInfo>
+                            </ItemInfo>
+                        </ItemMainText>
+                        
+                    </HeaderItem>
+    
+                    <HeaderItem>
+                        <ItemPicture/>
+                            <ItemMainText>
+                               <span className="PublicationText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit accusantium ipsum, ratione nihil obcaecati provident impedit tempore explicabo fuga asperiores molestias fugit reprehenderit! Facere pariatur dolorum doloribus! Natus, quae praesentium?</span>
+                                <ItemInfo>
+                                    <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
+                                    <ItemDataPivture/>
+                                    <ItemDataInfo>Konrad Baran</ItemDataInfo>
+                                </ItemInfo>
+                            </ItemMainText>
+                          
+                    </HeaderItem>
+    
+                    <PublicationsLink to="/publications">See more publications</PublicationsLink>
+                </PublicationsWrapper>
+            </HeaderWrapper>
+            )
         }
         
     
