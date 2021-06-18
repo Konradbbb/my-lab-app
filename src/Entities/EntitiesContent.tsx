@@ -77,7 +77,7 @@ export const EntitiesContent: FC = () => {
     const { usersList } = useSelector<IState, IUsersReducer>(state => ({
         ...state.users
     }));
-    // <TitleEntities>{postList.Math.random()*100}</TitleEntities>
+    
     if (usersList?.length > 0) {
         return (
             <EntitiesContentContainer>

@@ -93,6 +93,8 @@ const LeftIcon = styled.div`
 const InnerSpan = styled.span`
     // border: 1px solid red;
     // height: 50px;
+    font-family: Arial;
+    color: ${Colors.darkBlue};
     display: inline-block;
     bottom: 100px;
     margin-left: 50px;
@@ -105,11 +107,12 @@ const MenuHomeIcon = styled(CustomImg)`
 
 
 export const TopBar: FC = props => {
-    const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
 
+    const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
     const menuHandler = () => {
         toggleDropdown();
     }
+    
 
     return (
         <Wrapper2>
