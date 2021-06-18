@@ -22,10 +22,10 @@ const TopNavigation = styled.div`
     // padding-left: 60%; 
     
     padding-top: 1%;
-    box-shadow: 1px 1px 2px grey;
+    box-shadow: 1px 0 1px ${Colors.lightGrey};
 `;
 
-const NavigationPictures = styled.img`
+export const NavigationPictures = styled.img`
     height: 15px;
     width: 15px;
     margin-left: 30px;
@@ -89,6 +89,8 @@ const InformationOneBox = styled(ProfilPictureBox)`
     padding-top: 90px;
     height: 74%;
     width: 20%;
+    // box-shadow: 1px 1px 2px grey;
+
     
 `;
 
@@ -104,7 +106,7 @@ const TextBoxes = styled.div`
     margin-left: 20px;
 `;
 
-const MiniIconOnRight = styled.img`
+export const MiniIconOnRight = styled.img`
     height: 20px;
     width: 20px;
     margin-left: 27%;
