@@ -52,6 +52,11 @@ const HeaderItem = styled.div`
     margin: 10px;
     height: 25%;
     display: flex;
+    &:hover {
+        box-shadow: 1px 2px 7px ${Colors.lightBlue};
+        border-radius: 5px;
+        cursor: pointer;
+    }
 `;
 
 const ItemPicture = styled.div`
@@ -104,10 +109,12 @@ const ItemDataPivture = styled.div`
     tex-decoriations: none;
     font-size: 12px;
     font-family: Arial;
-    color: ${Colors.blue};
+    color: ${Colors.lightBlue};
+    border-radius: 50px;
     &:hover {
-        color: ${Colors.black};
-        
+        color: ${Colors.grey};
+        background: ${Colors.erty};
+
     }
     margin-left: 15px;
     

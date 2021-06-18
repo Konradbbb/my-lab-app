@@ -22,9 +22,15 @@ const WorkSpaceItems = styled.div`
     border-radius: 6px;
     background: ${Colors.white};
     box-shadow: 1px 1px 2px grey;
+    &:hover {
+        box-shadow: 1px 2px 7px ${Colors.lightBlue};
+    }
 `;
 
 const ItemIcon = styled(PicturePublications)`
+    
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px ${Colors.lightGrey};
     height: 90px;
     position: relative;
     bottom: 30%;
@@ -32,6 +38,7 @@ const ItemIcon = styled(PicturePublications)`
 `;
 
 const ItemPicture = styled.img`
+    
     background: green;
     width: 101%;
     height: 40%;

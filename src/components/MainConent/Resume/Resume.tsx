@@ -10,6 +10,8 @@ const ResumeWrapper = styled(HeaderWrapper)`
     display: block;
     box-shadow: none; 
     // margin-top: 50px;
+   
+    
 `;
 
 const ResumeItem = styled.div`
@@ -18,7 +20,11 @@ const ResumeItem = styled.div`
     width: 96%;
     margin: 2%;
     box-shadow: 1px 1px 2px grey;
-    
+    border-radius: 5px;
+    &:hover {
+        box-shadow: 1px 2px 7px ${Colors.lightBlue};
+        
+    }
 `;
 
 

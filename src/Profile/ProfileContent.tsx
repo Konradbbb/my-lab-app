@@ -16,6 +16,7 @@ const MainContainer = styled.div`
 const ContentContainers = styled(HeaderWrapper)`
     width: 100%;
     height: 330px;
+    
     // border: 1px solid green;
     padding-bottom: 0;
     margin: 0;
@@ -32,6 +33,10 @@ const ContentContainers = styled(HeaderWrapper)`
 const ContentBoxes = styled.div`
     margin: 1%;
     // border: 2px solid blue;
+    &:hover {
+        box-shadow:  2px 3px 7px ${Colors.lightBlue};
+
+    }
     width: 50%;
     height: 98%;
     border-radius: 5px;
@@ -79,7 +84,7 @@ const PanelBox = styled(ExpertiseBox)`
 
 `;
 
-const DarkText = styled(LightGreyText)`
+export const DarkText = styled(LightGreyText)`
     color: ${Colors.darkBlue};
     font-size: 13px;
     margin-bottom: 25px;
@@ -134,7 +139,7 @@ const CorrespondantName = styled(BoxTitle)`
     margin-left: 10px;   
 `;
 
-const CorrespondantsRightPictures = styled(CorrespondantsPicture)`
+export const CorrespondantsRightPictures = styled(CorrespondantsPicture)`
     margin-left: 60px;
     background: none;
     border-radius: 0;
@@ -143,6 +148,13 @@ const CorrespondantsRightPictures = styled(CorrespondantsPicture)`
 `;
 
 const Proposals = styled(ExpertiseBox)`
+`;
+
+const InternalRevievs = styled(ExpertiseBox)`
+
+`;
+
+const CostAmount = styled(ExpertiseBox)`
 `;
 
 
@@ -232,6 +244,22 @@ export const ProfileContent: FC = () => {
                     <Proposals>
                         <BoxTitle>Proposals</BoxTitle>
                     </Proposals>
+                </ContentBoxes>
+
+            </ContentContainers>
+
+            <ContentContainers>
+
+                <ContentBoxes>
+                        <InternalRevievs>
+                            <BoxTitle>Internal reviews</BoxTitle>
+                        </InternalRevievs>
+                </ContentBoxes>
+
+                <ContentBoxes>
+                        <CostAmount>
+                            <BoxTitle>Amount of fees</BoxTitle>
+                        </CostAmount>
                 </ContentBoxes>
 
             </ContentContainers>

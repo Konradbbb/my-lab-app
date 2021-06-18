@@ -33,7 +33,7 @@ const BoxOne = styled.div`
 const TitleOne = styled.span`
     font-size: 20px;
     font-weight:bold;
-    color:${Colors.grey};
+    color:${Colors.darkBlue};
 `;
 const ImgOne = styled.img`
     width: 15px;
@@ -64,7 +64,7 @@ const ButtonOneImg= styled.img`
     width: 15px;
 `;
 const ButtonOneText = styled.span`
-    font-size: 20px;
+    font-size: 13px;
     font-weight:bold;
     color:#3a4ea4;
     margin-left:8px;
@@ -85,7 +85,7 @@ const IconButtonTwo = styled.img`
     height: 15px;
 `;
 const TextButtonTwo = styled.span`
-    font-size:${FontSize[18]};
+    font-size: 13px;
     font-weight:bold;
     color:#3a4ea4;
     margin-left:8px;
@@ -251,11 +251,11 @@ const InputContainer = styled.div`
     height:2em;
     margin-right:8px;
 `;
-const InputFilter = styled.input`
+export const InputFilter = styled.input`
     border:none;
     outline-style:none;
 `;
-const InputImg = styled.img`
+export const InputImg = styled.img`
     width: 1.3em;
     height: 1.3em;
     background-color:${Colors.white};
@@ -285,6 +285,9 @@ const FollowSpan = styled.span`
     font-size: 17px;
     font-weight:bold;
     margin-right:4px;
+    &:hover {
+        color: ${Colors.darkBlue};
+    }
 `;
 const ButtonDropdownArrow = styled.img`
     width: 10px;
@@ -295,6 +298,7 @@ export const EntitiesTopOne: FC = () => {
 
     const [inputText, setInputText] = useState<string>('');
     const dispatch = useDispatch();
+
     const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {
         const text = e.target.value;
         setInputText(text);

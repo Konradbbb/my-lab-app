@@ -13,14 +13,13 @@ const ProfilHeaderComponent = styled(HeaderWrapper)`
 `;
 
 const TopNavigation = styled.div`
-    width: 100%;
+    width: 35.8%;
     height: 6%;
     // border: 1px solid blue;
+    padding-left: 900px;
     display: flex;
     // justify-content: space-between;
     text-align: right;
-    // padding-left: 60%; 
-    
     padding-top: 1%;
     box-shadow: 1px 0 1px ${Colors.lightGrey};
 `;
@@ -38,6 +37,9 @@ const NavigationsText = styled.div`
     font-family: Arial;
     color: ${Colors.black};
     cursor: pointer;
+    &:hover {
+        color: ${Colors.lightGrey};
+    }
 `;
 
 const ProfileMainBox = styled.div`
@@ -72,9 +74,9 @@ const SeeProfileButton = styled.div`
     cursor: pointer;
     font-family: Arial;
     font-size: 17px;
-    color: ${Colors.blue};
+    color: ${Colors.darkBlue};
     &:hover {
-        color: ${Colors.black};
+        color: ${Colors.lightBlue};
         background: ${Colors.erty};
         box-shadow: 1px 1px 2px grey;
     }
@@ -99,9 +101,9 @@ const TextBoxes = styled.div`
     width: 70%;
     height: 20px;
     font-size: 14px;
-    color: ${Colors.black};
+    color: ${Colors.darkBlue};
     font-family: Arial;
-    font-weight: bold;
+    // font-weight: bold;
     padding-top: 1%;
     margin-left: 20px;
 `;
@@ -110,6 +112,7 @@ export const MiniIconOnRight = styled.img`
     height: 20px;
     width: 20px;
     margin-left: 27%;
+    
     top: 0;
     cursor: pointer;
     margin-top: 5px;
@@ -128,7 +131,7 @@ export const ProfilHeader: FC = () => {
                 <NavigationsText>Create a request</NavigationsText>
                 <NavigationPictures src="./media/icons/house2.svg"/>
                 <NavigationsText>Add to a cluster</NavigationsText>
-                <NavigationPictures src="./media/icons/cog.svg"/>
+                <NavigationPictures src="../media/icons/close.svg"/>
             </TopNavigation>
             <ProfileMainBox>
                 <ProfilPictureBox>
