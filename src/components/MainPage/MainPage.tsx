@@ -17,7 +17,8 @@ import { People } from '../../RoutingComponents/People';
 import { Administration } from '../../RoutingComponents/Administration';
 import { YourPublications } from '../../RoutingComponents/YourPublications';
 import { Network } from '../../RoutingComponents/Network';
-import { MyProfile } from '../../RoutingComponents/MyProfile';
+
+import { MyProfile } from '../../Profile/MyProfile';
 import { MainContent } from '../MainConent/MainContent';
 
 
