@@ -9,10 +9,12 @@ import { ProfileContent } from './ProfileContent';
 const MyProfilMain = styled(HeaderWrapper)`
     height: 1300px;
     box-shadow: 0 0 0 0;
-    // border: 1px solid red;
+    // border: 3px solid red;
     background: ${Colors.erty};
     display: block;
 `;
+
+
 
 export const MyProfile: FC = () => {
 

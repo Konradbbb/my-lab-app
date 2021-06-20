@@ -5,7 +5,7 @@ import { HeaderWrapper } from '../components/MainConent/HeaderPublications/Heade
 
 
 const ProfilHeaderComponent = styled(HeaderWrapper)`
-    // border: 1px solid green;
+    // border: 3px solid green;
     width: 100%;
     margin: 0;
     display: block;

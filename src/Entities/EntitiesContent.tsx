@@ -13,6 +13,7 @@ const EntitiesContentContainer = styled.div`
     border: 1px solid red;
     margin-top:20px;
     width:80%;
+    height: 300px;
     display:flex;
     .List{
         display:block!important;
@@ -65,6 +66,8 @@ const DescriptionEntities = styled.p`
     color: lightgrey;
     margin-top: 2em;
 `;
+
+
 export const EntitiesContent: FC = () => {
     const {posts} = useStore().getState();
 
@@ -78,10 +81,11 @@ export const EntitiesContent: FC = () => {
         ...state.users
     }));
     
-    if (usersList?.length > 0) {
+    if (usersList?.length <= 0) {
         return (
             <EntitiesContentContainer>
                 <EntitiesContainerMosaic className={posts.listType}>
+
                     {
                         postList.map((post) => (
                             <MainEntities className='item'>
@@ -95,6 +99,7 @@ export const EntitiesContent: FC = () => {
                             </MainEntities>
                         ))
                     }
+
                 </EntitiesContainerMosaic>
             </EntitiesContentContainer>
         )

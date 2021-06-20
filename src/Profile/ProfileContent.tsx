@@ -8,7 +8,7 @@ import { NavigationPictures } from './ProfilHeader';
 const MainContainer = styled.div`
     width: 100%;
     height: 1000px;
-    // border: 2px solid red;
+    // border: 2px solid blue;
     display: block;
 
 `;
@@ -17,7 +17,7 @@ const ContentContainers = styled(HeaderWrapper)`
     width: 100%;
     height: 330px;
     
-    // border: 1px solid green;
+    // border: 5px solid green;
     padding-bottom: 0;
     margin: 0;
     margin-left: -1px;
@@ -41,12 +41,13 @@ const ContentBoxes = styled.div`
     height: 98%;
     border-radius: 5px;
     margin-bottom: 0;
-    box-shadow: 1px 1px 2px grey;
+    box-shadow: 1px 1px 4px grey;
     background: ${Colors.white};
 `;
 
 const LightGreyText = styled.div`
     font-family: Arial;
+    // border: 1px solid grey;
     font-size: 12px;
     color: ${Colors.lightGrey}; 
     margin: 1%;

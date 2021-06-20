@@ -9,16 +9,34 @@ const WorkSpaceWrapper = styled(HeaderWrapper)`
     display: flex;
     background: ${Colors.erty};
     box-shadow: none;
+    
+    // border: 1px solid green;
+
+`;
+
+const WorkSpaceSlider = styled.div`
+    overflow: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    // border: 2px solid blue;
+    width: 100%;
+    height: 280px;
+    display: inline-block;
+    background: ${Colors.erty};
 
 `;
 
 const WorkSpaceItems = styled.div`
     // border: 1px solid red;
+    // overflow: auto;
     margin: 2%;
     // margin-top: 50px;
     height: 80%;
     width: 25%;
-    display: block;
+    display: inline-block;
     border-radius: 6px;
     background: ${Colors.white};
     box-shadow: 1px 1px 2px grey;
@@ -92,6 +110,9 @@ export const WorkSpace: FC = () => {
 
     return (
         <WorkSpaceWrapper>
+            <WorkSpaceSlider>
+
+            
             <WorkSpaceItems>
                 <ItemPicture/>
                 <ItemTitle>Konrad</ItemTitle>
@@ -123,8 +144,34 @@ export const WorkSpace: FC = () => {
                 <ItemContent>Konrad Baran</ItemContent>
                 <ItemInfo>Last update 2 days ago</ItemInfo>
             </WorkSpaceItems>
+
+
+            <WorkSpaceItems>
+                <ItemPicture/>
+                <ItemTitle>Konrad</ItemTitle>
+                <ItemIcon/>
+                <ItemContent>Konrad Baran</ItemContent>
+                <ItemInfo>Last update 2 days ago</ItemInfo>
+            </WorkSpaceItems>
+
+            <WorkSpaceItems>
+                <ItemPicture/>
+                <ItemTitle>Konrad</ItemTitle>
+                <ItemIcon/>
+                <ItemContent>Konrad Baran</ItemContent>
+                <ItemInfo>Last update 2 days ago</ItemInfo>
+            </WorkSpaceItems>
+
+            <WorkSpaceItems>
+                <ItemPicture/>
+                <ItemTitle>Konrad</ItemTitle>
+                <ItemIcon/>
+                <ItemContent>Konrad Baran</ItemContent>
+                <ItemInfo>Last update 2 days ago</ItemInfo>
+            </WorkSpaceItems>
+           
           
-
+            </WorkSpaceSlider>
         </WorkSpaceWrapper>
     );
 };
