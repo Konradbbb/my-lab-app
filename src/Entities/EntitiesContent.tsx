@@ -5,10 +5,11 @@ import { IPostReducer } from '../reducers/postsReducers';
 import { useSelector, useStore } from 'react-redux';
 import { ISinglePhotoReducer } from '../reducers/photoReducers'
 import { IUsersReducer } from '../reducers/usersReducers';
+import { Colors } from '../styledHelpers/Colors';
 
 
 const EntitiesContentContainer = styled.div`
-    border: 1px solid red;
+    // border: 1px solid red;
     margin-top:20px;
     width:80%;
     height: 300px;
@@ -22,6 +23,7 @@ const EntitiesContentContainer = styled.div`
     }
 `;
 const EntitiesContainerMosaic = styled.div`
+    color: ${Colors.white};
     width:100%;
     margin:auto;
     margin-left:10px;
@@ -30,12 +32,15 @@ const EntitiesContainerMosaic = styled.div`
    
 `;
 const MainEntities = styled.div`
-    width: 320px;
+    background: ${Colors.white};
+    padding-left: 5px;
+    width: 300px;
     display: flex;
     flex-direction: row;
     box-shadow: 0px 5px 5px 0px lightgrey};
     max-height50px;
     margin:15px auto;
+    margin-left: 30px;
     padding-bottom:5px;
 `;
 const MiniEntities = styled.div`
@@ -82,7 +87,7 @@ export const EntitiesContent: FC = () => {
 
 
     
-    if (usersList?.length <= 0) {
+    if (usersList?.length > 0) {
         return (
             <EntitiesContentContainer>
                 <EntitiesContainerMosaic className={posts.listType}>
@@ -94,7 +99,7 @@ export const EntitiesContent: FC = () => {
                                     <ImgMiniEntities src={photoList[1]?.url} alt="api-image" />
                                 </MiniEntities>
                                 <MiniEntitiesTwo>
-                                    <TitleEntities>{postList[1]?.title}</TitleEntities>
+                                    <TitleEntities>{post.title}</TitleEntities>
                                     <DescriptionEntities>{usersList[1]?.address.city} {usersList[1].address.street} {usersList[1].address.zipcode}</DescriptionEntities>
                                 </MiniEntitiesTwo>
                             </MainEntities>

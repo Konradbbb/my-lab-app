@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import styled from 'styled-components';
 import { HeaderWrapper } from '../HeaderPublications/HeaderPublications';
 import { Colors } from '../../../styledHelpers/Colors';
@@ -9,17 +9,19 @@ import { IState } from '../../../reducers';
 import { IUsersReducer } from '../../../reducers/usersReducers';
 import { ICommentReducer } from '../../../reducers/commentsReducers';
 import { IPostReducer } from '../../../reducers/postsReducers';
+import ReactPaginate from 'react-paginate';
 
 const ResumeWrapper = styled(HeaderWrapper)`
-    border: 3px solid red;
+    // border: 3px solid red;
     background: ${Colors.erty};
-    height: 600px;
+    height: 850px;
+    
     display: block;
     box-shadow: none; 
-    // margin-top: 50px;
-   
-    
+    // margin-top: 50px; 
 `;
+
+
 
 const ResumeItem = styled.div`
     background: ${Colors.white};
@@ -83,6 +85,17 @@ const ResumeDot = styled.div`
     margin-right: 19px;
 `;
 
+const PaginationContainer = styled.div`
+    font-weight: bold;
+    width: 80%;
+    height: 30px;
+    // border: 1px solid red;
+    font-family: Arial;
+    font-size: 15px;
+    color: ${Colors.darkBlue};
+    display: flex;
+`;
+
 
 
 
@@ -100,83 +113,60 @@ export const Resume: FC = () => {
         ...state.posts
     }));
 
+    const [currentPage , setCurrentPage ] = useState<number>(0);
+
+    const handlePageClick  = (data:any) => {
+        const selected = data.selected;
+        setCurrentPage(selected);
+    }
+
     
 
     return (
+        
         <ResumeWrapper>
 
-            <ResumeItem>
-                <ResumeItemTitle>{postList[0]?.title}</ResumeItemTitle>
-                <ResumeItemComment>{postList[0]?.body}</ResumeItemComment>
-                <ResumeItemBottomInfo>
+            {
+                postList.slice(currentPage, currentPage +5).map((post) => (
+
+                <ResumeItem>
+                    <ResumeItemTitle>{post.title}</ResumeItemTitle>
+                    <ResumeItemComment>{post.body}</ResumeItemComment>
+                    <ResumeItemBottomInfo>
                     <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
-                    <LightGreyText>{usersList[0]?.company.name}</LightGreyText>
+                    <LightGreyText>{usersList[0].company.name}</LightGreyText>
                     <ResumeDot>.</ResumeDot>
                     <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
                     <LightGreyText>Client contract</LightGreyText>
                     <ResumeDot>.</ResumeDot>
-                    <LightGreyText>Updated 3 days ago by {usersList[0]?.name}</LightGreyText>
-                </ResumeItemBottomInfo>
-            </ResumeItem>
+                    <LightGreyText>Updated 3 days ago by {usersList[0].name}</LightGreyText>
+                    </ResumeItemBottomInfo>
+                </ResumeItem>
+
+                ))
+            } 
+    
+
+            <PaginationContainer>
+
+                <ReactPaginate
             
-            {/* <ResumeItem>
-                <ResumeItemTitle>{postList[0].title}</ResumeItemTitle>
-                <ResumeItemComment>{postList[0].body}</ResumeItemComment>
-                <ResumeItemBottomInfo>
-                    <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
-                    <LightGreyText>{usersList[0].company.name}</LightGreyText>
-                    <ResumeDot>.</ResumeDot>
-                    <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
-                    <LightGreyText>Client contract</LightGreyText>
-                    <ResumeDot>.</ResumeDot>
-                    <LightGreyText>Updated 3 days ago by {usersList[0].name}</LightGreyText>
-                </ResumeItemBottomInfo>
-            </ResumeItem>
-
-            <ResumeItem>
-                <ResumeItemTitle>{postList[0].title}</ResumeItemTitle>
-                <ResumeItemComment>{postList[0].body}</ResumeItemComment>
-                <ResumeItemBottomInfo>
-                    <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
-                    <LightGreyText>{usersList[0].company.name}</LightGreyText>
-                    <ResumeDot>.</ResumeDot>
-                    <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
-                    <LightGreyText>Client contract</LightGreyText>
-                    <ResumeDot>.</ResumeDot>
-                    <LightGreyText>Updated 3 days ago by {usersList[0].name}</LightGreyText>
-                </ResumeItemBottomInfo>
-            </ResumeItem>
-
-            <ResumeItem>
-                <ResumeItemTitle>{postList[0].title}</ResumeItemTitle>
-                <ResumeItemComment>{postList[0].body}</ResumeItemComment>
-                <ResumeItemBottomInfo>
-                    <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
-                    <LightGreyText>{usersList[0].company.name}</LightGreyText>
-                    <ResumeDot>.</ResumeDot>
-                    <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
-                    <LightGreyText>Client contract</LightGreyText>
-                    <ResumeDot>.</ResumeDot>
-                    <LightGreyText>Updated 3 days ago by {usersList[0].name}</LightGreyText>
-                </ResumeItemBottomInfo>
-            </ResumeItem>
-
-            <ResumeItem>
-                <ResumeItemTitle>{postList[0].title}</ResumeItemTitle>
-                <ResumeItemComment>{postList[0].body}</ResumeItemComment>
-                <ResumeItemBottomInfo>
-                    <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
-                    <LightGreyText>{usersList[0].company.name}</LightGreyText>
-                    <ResumeDot>.</ResumeDot>
-                    <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
-                    <LightGreyText>Client contract</LightGreyText>
-                    <ResumeDot>.</ResumeDot>
-                    <LightGreyText>Updated 3 days ago by {usersList[0].name}</LightGreyText>
-                </ResumeItemBottomInfo>
-            </ResumeItem> */}
-
-            
-
+                previousLabel={'PREVIOUS'}
+                nextLabel={'NEXT'}
+                breakLabel={'...'}
+                breakClassName={'break-me'}
+                pageCount={postList.length}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={5}
+                onPageChange={handlePageClick}
+                containerClassName={'pagination'}
+                activeClassName={'active'}
+                pageClassName={'page'}
+                previousClassName={'previous'}
+                nextClassName={'next'}  
+                  
+            />
+                </PaginationContainer>
         </ResumeWrapper>
     );
 };
