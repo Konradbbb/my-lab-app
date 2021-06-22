@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { IState } from '../../../reducers';
 import { IPostReducer } from '../../../reducers/postsReducers';
 import { IUsersReducer } from '../../../reducers/usersReducers';
+import { ISinglePhotoReducer } from '../../../reducers/photoReducers';
 
 
 
@@ -22,7 +23,7 @@ border-radius: 4px;
 display: flex;
 `;
 
-export const PicturePublications = styled.div`
+export const PicturePublications = styled.img`
     height: 100%;
     width: 30%;
     // border: 1px solid green;
@@ -59,7 +60,7 @@ const HeaderItem = styled.div`
     }
 `;
 
-const ItemPicture = styled.div`
+const ItemPicture = styled.img`
     margin: 2px;
     width: 15%;
     height: 90%;
@@ -90,7 +91,7 @@ const ItemInfo = styled.div`
 export const ItemDataInfo = styled.div`
     // border: 1px solid green;
     height: 80%;
-    width: 30%;
+    width: 36%;
     font-size: 12px;
     font-family: Arial;
     text-align: center;
@@ -98,7 +99,7 @@ export const ItemDataInfo = styled.div`
     color: ${Colors.grey}
 `;
 
-const ItemDataPivture = styled.div`
+const ItemDataPivture = styled.img`
     background: green;
     border-radius: 50px;
     height: 90%;
@@ -126,24 +127,28 @@ export const HeaderPublications: FC = () => {
     const { postList } = useSelector<IState, IPostReducer>(state => ({
         ...state.posts
     }));
-    const { usersList } = useSelector<IState, IUsersReducer>(state => ({
+    const { usersList, someData } = useSelector<IState, IUsersReducer>(state => ({
         ...state.users
+    }));
+
+    const { photoList } = useSelector<IState, ISinglePhotoReducer>(state => ({
+        ...state.photo
     }));
 
 
     if (usersList?.length > 0){
         return (
             <HeaderWrapper>
-                <PicturePublications />
+                <PicturePublications src={photoList[4]?.url} />
                 <PublicationsWrapper>
                     <HeaderTitle>Latest publications</HeaderTitle>
                     <HeaderItem>
-                        <ItemPicture/>
+                        <ItemPicture src={photoList[0]?.url}/>
                         <ItemMainText>
                                 <span className="PublicationText">{postList[0].body}</span>
                             <ItemInfo>
                                 <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
-                                <ItemDataPivture/>
+                                <ItemDataPivture src={photoList[0]?.url}/>
                                 <ItemDataInfo>{usersList[0].name}</ItemDataInfo>
                             </ItemInfo>
                         </ItemMainText>
@@ -151,12 +156,12 @@ export const HeaderPublications: FC = () => {
                     </HeaderItem>
     
                     <HeaderItem>
-                        <ItemPicture/>
+                    <ItemPicture src={photoList[1]?.url}/>
                         <ItemMainText>
                                 <span className="PublicationText">{postList[1].body}</span>
                             <ItemInfo>
                             <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
-                                <ItemDataPivture/>
+                                <ItemDataPivture src={photoList[1]?.url}/>
                                 <ItemDataInfo>{usersList[1].name}</ItemDataInfo>
                             </ItemInfo>
                         </ItemMainText>
@@ -164,13 +169,13 @@ export const HeaderPublications: FC = () => {
                     </HeaderItem>
     
                     <HeaderItem>
-                        <ItemPicture/>
+                    <ItemPicture src={photoList[2]?.url}/>
                             <ItemMainText>
                                <span className="PublicationText">{postList[2].body}</span>
                                 <ItemInfo>
                                     <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
-                                    <ItemDataPivture/>
-                                    <ItemDataInfo>{usersList[2].name}</ItemDataInfo>
+                                    <ItemDataPivture src={photoList[4]?.url}/>
+                                    <ItemDataInfo>{usersList[4].name}</ItemDataInfo>
                                 </ItemInfo>
                             </ItemMainText>
                           
@@ -179,8 +184,11 @@ export const HeaderPublications: FC = () => {
                     <PublicationsLink to="/publications">See more publications</PublicationsLink>
                 </PublicationsWrapper>
             </HeaderWrapper>
-    
+           
         )} else {
+
+            // render default values if there is any problems with API
+
             return (
                 <HeaderWrapper>
                 <PicturePublications />
@@ -189,7 +197,7 @@ export const HeaderPublications: FC = () => {
                     <HeaderItem>
                         <ItemPicture/>
                         <ItemMainText>
-                                <span className="PublicationText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam impedit necessitatibus obcaecati quasi harum suscipit modi voluptate quas ex cum esse labore quibusdam beatae, aut, doloremque soluta rerum quod repellat?</span>
+                                <span className="PublicationText">{someData}</span>
                             <ItemInfo>
                                 <ItemDataInfo> 7 Jan 2021</ItemDataInfo>
                                 <ItemDataPivture/>

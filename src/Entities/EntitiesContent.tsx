@@ -1,7 +1,5 @@
 import { ChangeEvent, FC} from 'react';
 import styled from 'styled-components';
-// import { imgSize } from '../../styledHelpers/ImgSize';
-// import { FontSize } from '../../styledHelpers/FontSize';
 import { IState } from '../reducers';
 import { IPostReducer } from '../reducers/postsReducers';
 import { useSelector, useStore } from 'react-redux';
@@ -69,6 +67,7 @@ const DescriptionEntities = styled.p`
 
 
 export const EntitiesContent: FC = () => {
+
     const {posts} = useStore().getState();
 
     const { postList } = useSelector<IState, IPostReducer>(state => ({
@@ -80,6 +79,8 @@ export const EntitiesContent: FC = () => {
     const { usersList } = useSelector<IState, IUsersReducer>(state => ({
         ...state.users
     }));
+
+
     
     if (usersList?.length <= 0) {
         return (
@@ -105,7 +106,25 @@ export const EntitiesContent: FC = () => {
         )
     }
     else {
-        return (<></>)
+        return (
+            <EntitiesContentContainer>
+                <EntitiesContainerMosaic className={posts.listType}>
+
+                    
+                            <MainEntities className='item'>
+                                <MiniEntities>
+                                    <ImgMiniEntities src="" alt="api-image" />
+                                </MiniEntities>
+                                <MiniEntitiesTwo>
+                                    <TitleEntities>Konrad</TitleEntities>
+                                    <DescriptionEntities>Description</DescriptionEntities>
+                                </MiniEntitiesTwo>
+                            </MainEntities>
+                      
+
+                </EntitiesContainerMosaic>
+            </EntitiesContentContainer>
+        )
     }
 
 };

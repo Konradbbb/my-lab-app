@@ -10,6 +10,8 @@ const defaultState = () : IUsersReducer  => ({
     usersList: [],
     someData: 'xxxxxx'
 });
+
+
 export default (state = defaultState(),action : any)=>{
     switch(action.type){
         case actionTypes.GET_USERS:{

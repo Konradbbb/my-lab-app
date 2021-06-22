@@ -45,7 +45,7 @@ const ContentBoxes = styled.div`
     background: ${Colors.white};
 `;
 
-const LightGreyText = styled.div`
+export const LightGreyText = styled.div`
     font-family: Arial;
     // border: 1px solid grey;
     font-size: 12px;

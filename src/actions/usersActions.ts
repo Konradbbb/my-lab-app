@@ -13,6 +13,7 @@ export const getUsers = () : Promise<ISingleUser[]> => (( dispatch:Dispatch ) =>
             })
         })
 }) as any;
+
 export const getSomeData = (someData: string ) : Promise<ISingleUser[]> => ((dispatch: Dispatch) => {
     dispatch({
         type: actionsTypes.PUSH_DATA,

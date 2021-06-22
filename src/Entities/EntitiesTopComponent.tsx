@@ -297,6 +297,7 @@ const ButtonDropdownArrow = styled.img`
 export const EntitiesTopOne: FC = () => {
 
     const [inputText, setInputText] = useState<string>('');
+    
     const dispatch = useDispatch();
 
     const inputHandler = (e: ChangeEvent<HTMLInputElement>) => {

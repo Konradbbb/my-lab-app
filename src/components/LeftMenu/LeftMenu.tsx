@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import { Wrapper } from '../../styledHelpers/Components';
 import { Colors } from '../../styledHelpers/Colors';
 import {Link} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { IState } from '../../reducers';
+import { IUsersReducer } from '../../reducers/usersReducers';
+import { ISinglePhotoReducer } from '../../reducers/photoReducers';
 
 const LeftMenuWrapper = styled(Wrapper)`
     box-shadow: none;
@@ -153,14 +157,24 @@ const SmallPictureTextBox = styled.span`
 
 
 export const LeftMenu: FC = () => {
+
+    const { usersList, someData } = useSelector<IState, IUsersReducer>(state => ({
+        ...state.users
+    }));
+
+    const { photoList } = useSelector<IState, ISinglePhotoReducer>(state => ({
+        ...state.photo
+    }));
+
+
     return (
         <LeftMenuWrapper>
 
             <BoxesWrapper>
 
                 <PictureBox>
-                    <Picture src ="./media/icons/administration.svg" height="10px" width="10px" />
-                    <PictureTextBox to='/my_profile'>Konrad Baran</PictureTextBox>
+                    <Picture src ={photoList[0]?.url} />
+                    <PictureTextBox to='/my_profile'>{usersList[0]?.name}</PictureTextBox>
                     <SmallPictureTextBox>Logan Kapuczino</SmallPictureTextBox>
                 </PictureBox>
 

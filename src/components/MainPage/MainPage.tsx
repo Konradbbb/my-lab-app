@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { TopBar } from '../TopBar/TopBar';
@@ -17,14 +17,22 @@ import { People } from '../../RoutingComponents/People';
 import { Administration } from '../../RoutingComponents/Administration';
 import { YourPublications } from '../../RoutingComponents/YourPublications';
 import { Network } from '../../RoutingComponents/Network';
+import { useDispatch } from 'react-redux';
+import { getPosts } from '../../actions/postsActions';
+import { getUsers } from '../../actions/usersActions';
+import { getComments } from '../../actions/commentActions';
+import { getPhotos } from '../../actions/photoActions';
 
 import { MyProfile } from '../../Profile/MyProfile';
 import { MainContent } from '../MainConent/MainContent';
 
-
+type GetPosts = ReturnType<typeof getPosts>
+type GetUsers = ReturnType<typeof getUsers>
+type GetComments = ReturnType<typeof getComments>
+type GetPhotos = ReturnType<typeof getPhotos>
 
 const MainWrapper = styled.div`
-    height: 1500px;
+    height: 1700px;
     width: 100%;
     padding-top: 10px;
     // border: 1px solid black;
@@ -64,6 +72,17 @@ const MiniBoxes = styled.div`
 `;
 
      const MainPage: FC = () => {
+
+        const dispatch = useDispatch();
+
+        useEffect(() => {
+        dispatch<GetPosts>(getPosts());
+        dispatch<GetUsers>(getUsers());
+        dispatch<GetComments>(getComments());
+        dispatch<GetPhotos>(getPhotos());
+    })
+
+
         return (
         <Router>
             <MainWrapper>

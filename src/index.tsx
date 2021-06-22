@@ -6,13 +6,11 @@ import store from './tools/store';
 import MainPage from './components/MainPage/MainPage';
 
 ReactDOM.render(
-    <>
+    
     <Provider store={store}>
         <Reset />
         <MainPage />
-    </Provider>
-        
-    </>,
+    </Provider>,
     document.getElementById('root')
 
 );

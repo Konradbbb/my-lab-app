@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import { HeaderWrapper, PicturePublications } from '../HeaderPublications/HeaderPublications';
 import { ItemDataInfo } from '../HeaderPublications/HeaderPublications';
 import { Colors } from '../../../styledHelpers/Colors';
+import { useSelector } from 'react-redux';
+import { IState } from '../../../reducers';
+import { IUsersReducer } from '../../../reducers/usersReducers';
+import { ISinglePhotoReducer } from '../../../reducers/photoReducers';
 
 const WorkSpaceWrapper = styled(HeaderWrapper)`
     height: 280px;
@@ -107,6 +111,14 @@ const ItemInfo = styled(ItemDataInfo)`
 
 export const WorkSpace: FC = () => {
 
+    const { usersList, someData } = useSelector<IState, IUsersReducer>(state => ({
+        ...state.users
+    }));
+
+    const { photoList } = useSelector<IState, ISinglePhotoReducer>(state => ({
+        ...state.photo
+    }));
+    
 
     return (
         <WorkSpaceWrapper>
@@ -114,57 +126,32 @@ export const WorkSpace: FC = () => {
 
             
             <WorkSpaceItems>
-                <ItemPicture/>
-                <ItemTitle>Konrad</ItemTitle>
+                <ItemPicture src={photoList[6]?.url}/>
+                <ItemTitle>Client contract</ItemTitle>
                 <ItemIcon/>
                 <ItemContent>Konrad Baran</ItemContent>
                 <ItemInfo>Last update 2 days ago</ItemInfo>
             </WorkSpaceItems>
 
             <WorkSpaceItems>
-                <ItemPicture/>
-                <ItemTitle>Konrad</ItemTitle>
+                <ItemPicture src={photoList[11]?.url}/>
+                <ItemTitle>Corporate</ItemTitle>
                 <ItemIcon/>
                 <ItemContent>Konrad Baran</ItemContent>
                 <ItemInfo>Last update 2 days ago</ItemInfo>
             </WorkSpaceItems>
 
             <WorkSpaceItems>
-                <ItemPicture/>
-                <ItemTitle>Konrad</ItemTitle>
+                <ItemPicture src={photoList[9]?.url}/>
+                <ItemTitle>Supplier contract</ItemTitle>
                 <ItemIcon/>
                 <ItemContent>Konrad Baran</ItemContent>
                 <ItemInfo>Last update 2 days ago</ItemInfo>
             </WorkSpaceItems>
 
             <WorkSpaceItems>
-                <ItemPicture/>
-                <ItemTitle>Konrad</ItemTitle>
-                <ItemIcon/>
-                <ItemContent>Konrad Baran</ItemContent>
-                <ItemInfo>Last update 2 days ago</ItemInfo>
-            </WorkSpaceItems>
-
-
-            <WorkSpaceItems>
-                <ItemPicture/>
-                <ItemTitle>Konrad</ItemTitle>
-                <ItemIcon/>
-                <ItemContent>Konrad Baran</ItemContent>
-                <ItemInfo>Last update 2 days ago</ItemInfo>
-            </WorkSpaceItems>
-
-            <WorkSpaceItems>
-                <ItemPicture/>
-                <ItemTitle>Konrad</ItemTitle>
-                <ItemIcon/>
-                <ItemContent>Konrad Baran</ItemContent>
-                <ItemInfo>Last update 2 days ago</ItemInfo>
-            </WorkSpaceItems>
-
-            <WorkSpaceItems>
-                <ItemPicture/>
-                <ItemTitle>Konrad</ItemTitle>
+                <ItemPicture src={photoList[10]?.url}/>
+                <ItemTitle>Group norms</ItemTitle>
                 <ItemIcon/>
                 <ItemContent>Konrad Baran</ItemContent>
                 <ItemInfo>Last update 2 days ago</ItemInfo>
