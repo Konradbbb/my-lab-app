@@ -126,12 +126,12 @@ export const Resume: FC = () => {
         
         <ResumeWrapper>
 
-            {
-                postList.slice(currentPage, currentPage +5).map((post) => (
+           {
+            postList.slice(currentPage, currentPage +5).map((post) => (  
 
                 <ResumeItem>
-                    <ResumeItemTitle>{post.title}</ResumeItemTitle>
-                    <ResumeItemComment>{post.body}</ResumeItemComment>
+                    <ResumeItemTitle>{postList[0].title}</ResumeItemTitle>
+                    <ResumeItemComment>{postList[0].body}</ResumeItemComment>
                     <ResumeItemBottomInfo>
                     <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
                     <LightGreyText>{usersList[0].company.name}</LightGreyText>
@@ -143,8 +143,8 @@ export const Resume: FC = () => {
                     </ResumeItemBottomInfo>
                 </ResumeItem>
 
-                ))
-            } 
+                 ))
+              } 
     
 
             <PaginationContainer>
