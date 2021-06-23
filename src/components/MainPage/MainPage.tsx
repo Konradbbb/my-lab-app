@@ -17,6 +17,7 @@ import { People } from '../../RoutingComponents/People';
 import { Administration } from '../../RoutingComponents/Administration';
 import { YourPublications } from '../../RoutingComponents/YourPublications';
 import { Network } from '../../RoutingComponents/Network';
+import { WorkSpacePageMain } from '../MainConent/Workspace/WorkSpacePage/WorkSpacePageMain';
 import { useDispatch } from 'react-redux';
 import { getPosts } from '../../actions/postsActions';
 import { getUsers } from '../../actions/usersActions';
@@ -132,6 +133,10 @@ const MiniBoxes = styled.div`
 
                             <Route path='/my_profile' exact>
                                 <MyProfile/>
+                            </Route>
+
+                            <Route path='/workspace' exact>
+                                <WorkSpacePageMain/>
                             </Route>
                         </Switch>
                        

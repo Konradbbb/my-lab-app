@@ -149,6 +149,7 @@ export const CorrespondantsRightPictures = styled(CorrespondantsPicture)`
 `;
 
 const Proposals = styled(ExpertiseBox)`
+    display: inline-block;
 `;
 
 const InternalRevievs = styled(ExpertiseBox)`
@@ -158,7 +159,86 @@ const InternalRevievs = styled(ExpertiseBox)`
 const CostAmount = styled(ExpertiseBox)`
 `;
 
+const ProposalsContainer = styled.div`
+    // border: 1px solid green;
+    width: 100%;
+    height: 180px;
+    display: flex;
+`;
 
+const ProposalsColumn = styled.div`
+    // border: 1px solid red;
+    height: 180px;
+    width: 100px;
+    display: block;
+`;
+
+const ProposalColumnTitle = styled.div`
+    border-bottom: 1px solid ${Colors.veryLightGrey};
+    font-family: Arial;
+    font-size: 15px;
+    color: ${Colors.darkBlue};
+    padding-left: 5px;
+    padding-top: 8px;
+    height: 20px;
+    margin-bottom: 5px;
+`;
+
+const ProposalColumnRow = styled(ProposalColumnTitle)`
+    font-size: 12px;
+    color: ${Colors.lightGrey};
+    padding-top: 10px;
+    margin-bottom: 0;
+    border-bottom: 0;
+`;
+
+const HiperLink = styled.div`
+    text-align: right;
+    padding-top: 5px;
+    width: 95%;
+    height: 25px;
+    // border: 1px solid red;
+    color: ${Colors.internetBlue};
+    font-family: Arial;
+    font-size: 15px;
+    cursor: pointer;
+    &:hover {
+        color: ${Colors.lightBlue};
+    }
+`;
+
+const HiperLinkReviews = styled(HiperLink)`
+    text-align: left;
+    padding-left: 5px;
+`;
+
+
+const CostAmountContainer = styled(ProposalsContainer)`
+    // border: 1px solid red;
+    height: 200px;
+`;
+
+const CosAmountColumn = styled.div`
+    width: 25%;
+    height: 100%;
+    // border: 1px solid green;
+
+`;
+
+const CostAmountTitle = styled.div`
+    // border: 1px solid purple;
+    font-size: 16px;
+    font-family: Arial;
+    color: ${Colors.darkBlue};
+`;
+
+const CostAmountText = styled.div`
+    // border: 1px solid red;
+    font-size: 14px;
+    font-family: Arial;
+    color: ${Colors.grey};
+    margin-top: 7px;
+`;
 
 
 export const ProfileContent: FC = () => {
@@ -244,6 +324,57 @@ export const ProfileContent: FC = () => {
                 <ContentBoxes>
                     <Proposals>
                         <BoxTitle>Proposals</BoxTitle>
+                        <ProposalsContainer>
+                            <ProposalsColumn>
+                                <ProposalColumnTitle>Name</ProposalColumnTitle>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                            </ProposalsColumn>
+
+                            <ProposalsColumn>
+                            <ProposalColumnTitle>Entity</ProposalColumnTitle>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                            </ProposalsColumn>
+
+                            <ProposalsColumn>
+                            <ProposalColumnTitle>Location</ProposalColumnTitle>
+                                <ProposalColumnRow>France</ProposalColumnRow>
+                                <ProposalColumnRow>USA</ProposalColumnRow>
+                                <ProposalColumnRow>Italy</ProposalColumnRow>
+                                <ProposalColumnRow>Poland</ProposalColumnRow>
+                            </ProposalsColumn>
+
+                            <ProposalsColumn>
+                            <ProposalColumnTitle>Expertise</ProposalColumnTitle>
+                                <ProposalColumnRow>#Tax</ProposalColumnRow>
+                                <ProposalColumnRow>#M&A</ProposalColumnRow>
+                                <ProposalColumnRow>#Social</ProposalColumnRow>
+                                <ProposalColumnRow>#Comment</ProposalColumnRow>
+                            </ProposalsColumn>
+
+                            <ProposalsColumn>
+                            <ProposalColumnTitle>Date</ProposalColumnTitle>
+                                <ProposalColumnRow>20/01/2018</ProposalColumnRow>
+                                <ProposalColumnRow>01/01/2019</ProposalColumnRow>
+                                <ProposalColumnRow>24/05/2018</ProposalColumnRow>
+                                <ProposalColumnRow>21/12/2020</ProposalColumnRow>
+                            </ProposalsColumn>
+
+                            <ProposalsColumn>
+                            <ProposalColumnTitle>Firm</ProposalColumnTitle>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                            </ProposalsColumn>
+
+                        </ProposalsContainer>
+                        <HiperLink>See more publications</HiperLink>
                     </Proposals>
                 </ContentBoxes>
 
@@ -254,12 +385,90 @@ export const ProfileContent: FC = () => {
                 <ContentBoxes>
                         <InternalRevievs>
                             <BoxTitle>Internal reviews</BoxTitle>
+                            <ProposalsContainer>
+                            <ProposalsColumn>
+                                <ProposalColumnTitle>Name</ProposalColumnTitle>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                            </ProposalsColumn>
+
+                            <ProposalsColumn>
+                            <ProposalColumnTitle>Entity</ProposalColumnTitle>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                                <ProposalColumnRow>Operations</ProposalColumnRow>
+                            </ProposalsColumn>
+
+                            <ProposalsColumn>
+                            <ProposalColumnTitle>Location</ProposalColumnTitle>
+                                <ProposalColumnRow>France</ProposalColumnRow>
+                                <ProposalColumnRow>USA</ProposalColumnRow>
+                                <ProposalColumnRow>Italy</ProposalColumnRow>
+                                <ProposalColumnRow>Poland</ProposalColumnRow>
+                            </ProposalsColumn>
+
+                            <ProposalsColumn>
+                            <ProposalColumnTitle>Expertise</ProposalColumnTitle>
+                                <ProposalColumnRow>#Tax</ProposalColumnRow>
+                                <ProposalColumnRow>#M&A</ProposalColumnRow>
+                                <ProposalColumnRow>#Social</ProposalColumnRow>
+                                <ProposalColumnRow>#Comment</ProposalColumnRow>
+                            </ProposalsColumn>
+
+                            <ProposalsColumn>
+                            <ProposalColumnTitle>Date</ProposalColumnTitle>
+                                <ProposalColumnRow>20/01/2018</ProposalColumnRow>
+                                <ProposalColumnRow>01/01/2019</ProposalColumnRow>
+                                <ProposalColumnRow>24/05/2018</ProposalColumnRow>
+                                <ProposalColumnRow>21/12/2020</ProposalColumnRow>
+                            </ProposalsColumn>
+                            </ProposalsContainer>
+                            <HiperLinkReviews>See more Reviews</HiperLinkReviews>
                         </InternalRevievs>
                 </ContentBoxes>
 
                 <ContentBoxes>
                         <CostAmount>
                             <BoxTitle>Amount of fees</BoxTitle>
+                            <CostAmountContainer>
+                                <CosAmountColumn>
+                                    <CostAmountTitle>Year</CostAmountTitle>
+                                    <CostAmountText>2017</CostAmountText>
+                                    <CostAmountText>2018</CostAmountText>
+                                    <CostAmountText>2019</CostAmountText>
+                                    <CostAmountText>2020</CostAmountText>
+                                </CosAmountColumn>
+
+                                <CosAmountColumn>
+                                <CostAmountTitle>Cost Center</CostAmountTitle>
+                                    <CostAmountText>CS 153</CostAmountText>
+                                    <CostAmountText>CS 153</CostAmountText>
+                                    <CostAmountText>CS 147</CostAmountText>
+                                    <CostAmountText>CS152</CostAmountText>
+                                    <CostAmountText>CS 32</CostAmountText>
+                                </CosAmountColumn>
+
+                                <CosAmountColumn>
+                                <CostAmountTitle>Total amount</CostAmountTitle>
+                                    <CostAmountText>3 500 $</CostAmountText>
+                                    <CostAmountText>9 500 $</CostAmountText>
+                                    <CostAmountText>10 500 $</CostAmountText>
+                                    <CostAmountText>18 500 $</CostAmountText>
+                                    <CostAmountText>15 500 $</CostAmountText>
+                                </CosAmountColumn>
+
+                                <CosAmountColumn>
+                                <CostAmountTitle>Law firm</CostAmountTitle>
+                                    <CostAmountText>Clifford chance</CostAmountText>
+                                    <CostAmountText>Linklaters</CostAmountText>
+                                    <CostAmountText>Linklaters</CostAmountText>
+                                    <CostAmountText>Linklaters</CostAmountText>
+                                    <CostAmountText>Linklaters</CostAmountText>
+                                </CosAmountColumn>
+                            </CostAmountContainer>
                         </CostAmount>
                 </ContentBoxes>
 

@@ -11,14 +11,17 @@ import { Colors } from '../styledHelpers/Colors';
 const EntitiesContentContainer = styled.div`
     // border: 1px solid red;
     margin-top:20px;
-    width:80%;
+    width:95%;
     height: 300px;
     display:flex;
     .List{
-        display:block!important;
+        display: block;
         .item{
-            display:block;
+            display:flex;
             width:100%;
+            &:hover {
+                box-shadow: 1px 2px 7px ${Colors.lightBlue};
+            }
         }
     }
 `;
@@ -29,7 +32,7 @@ const EntitiesContainerMosaic = styled.div`
     margin-left:10px;
     display: inline-grid;
     grid-template-columns: auto auto auto auto;
-   
+    
 `;
 const MainEntities = styled.div`
     background: ${Colors.white};
@@ -42,18 +45,23 @@ const MainEntities = styled.div`
     margin:15px auto;
     margin-left: 30px;
     padding-bottom:5px;
+    &:hover{
+        box-shadow: 1px 2px 7px ${Colors.lightBlue};
+    }
 `;
 const MiniEntities = styled.div`
     display: flex;
     align-items: center;
+    
 `;
 const ImgMiniEntities = styled.img`
-    width: 8em;
-    height: 8em;
+    width: 100px;
+    height: 100px;
     border-radius: 10px;
     margin-left: 15px;
 `;
 const MiniEntitiesTwo = styled.div`
+    // border: 1px solid green;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,12 +69,12 @@ const MiniEntitiesTwo = styled.div`
 `;
 const TitleEntities = styled.span`
     font-size: 20px;;
-    font-weight: bold;
-    color:#3d50a6;
+    // font-weight: bold;
+    color: ${Colors.internetBlue};
 `;
 const DescriptionEntities = styled.p`
     font-size: 12px;
-    color: lightgrey;
+    color: ${Colors.grey};
     margin-top: 2em;
 `;
 

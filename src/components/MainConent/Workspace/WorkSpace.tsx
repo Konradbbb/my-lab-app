@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux';
 import { IState } from '../../../reducers';
 import { IUsersReducer } from '../../../reducers/usersReducers';
 import { ISinglePhotoReducer } from '../../../reducers/photoReducers';
+import { CustomLink } from '../../LeftMenu/LeftMenu';
+import { Link } from 'react-router-dom';
 
 const WorkSpaceWrapper = styled(HeaderWrapper)`
     height: 280px;
@@ -33,15 +35,17 @@ const WorkSpaceSlider = styled.div`
 
 `;
 
-const WorkSpaceItems = styled.div`
+const WorkSpaceItems = styled(Link)`
     // border: 1px solid red;
     // overflow: auto;
+    text-decoration: none;
     margin: 2%;
     // margin-top: 50px;
     height: 80%;
     width: 25%;
     display: inline-block;
     border-radius: 6px;
+    color: ${Colors.darkBlue};
     background: ${Colors.white};
     box-shadow: 1px 1px 2px grey;
     &:hover {
@@ -73,6 +77,7 @@ const ItemPicture = styled.img`
 
 const ItemTitle = styled.div`
     // border: 1px solid blue;
+    // text-decoration: none;
     margin-top: 5%;
     margin-left: 38%;
     width: 60%;
@@ -125,7 +130,7 @@ export const WorkSpace: FC = () => {
             <WorkSpaceSlider>
 
             
-            <WorkSpaceItems>
+            <WorkSpaceItems to='/workspace'>
                 <ItemPicture src={photoList[6]?.url}/>
                 <ItemTitle>Client contract</ItemTitle>
                 <ItemIcon/>
@@ -133,7 +138,7 @@ export const WorkSpace: FC = () => {
                 <ItemInfo>Last update 2 days ago</ItemInfo>
             </WorkSpaceItems>
 
-            <WorkSpaceItems>
+            <WorkSpaceItems to='/workspace'>
                 <ItemPicture src={photoList[11]?.url}/>
                 <ItemTitle>Corporate</ItemTitle>
                 <ItemIcon/>
@@ -141,7 +146,7 @@ export const WorkSpace: FC = () => {
                 <ItemInfo>Last update 2 days ago</ItemInfo>
             </WorkSpaceItems>
 
-            <WorkSpaceItems>
+            <WorkSpaceItems to='/workspace'>
                 <ItemPicture src={photoList[9]?.url}/>
                 <ItemTitle>Supplier contract</ItemTitle>
                 <ItemIcon/>
@@ -149,7 +154,7 @@ export const WorkSpace: FC = () => {
                 <ItemInfo>Last update 2 days ago</ItemInfo>
             </WorkSpaceItems>
 
-            <WorkSpaceItems>
+            <WorkSpaceItems to='/workspace'>
                 <ItemPicture src={photoList[10]?.url}/>
                 <ItemTitle>Group norms</ItemTitle>
                 <ItemIcon/>
