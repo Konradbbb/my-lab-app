@@ -93,7 +93,7 @@ export const WorkSpacePageHeader: FC = () => {
 
     return (
         <WorkSpaceHeaderWrapper>
-            <MainPictureHeader src={photoList[0].url}/>
+            <MainPictureHeader src={photoList[19].url}/>
                 <HeaderInfoWrapper>
                     <InfoPicture src='../media/icons/entities2.svg'/>
                     <InfoTextWrapper>
