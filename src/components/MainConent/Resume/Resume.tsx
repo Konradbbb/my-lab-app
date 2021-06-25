@@ -94,7 +94,27 @@ const PaginationContainer = styled.div`
     font-size: 15px;
     color: ${Colors.darkBlue};
     display: flex;
+    text-align: right;
+     .pagination {
+         display: flex;
+        //  border: 1px solid blue;
+         width: 350px;
+         justify-content: space-between;
+         list-style: none;
+         cursor: pointer;
+         margin-left: 45%;
+         color: ${Colors.darkBlue};
+         font-family: Arial;       
+     }
+     .pagination a {
+        &:hover {
+            color: ${Colors.internetBlue};
+            
+        }
+     }
 `;
+
+
 
 
 
@@ -130,8 +150,8 @@ export const Resume: FC = () => {
             postList.slice(currentPage, currentPage +5).map((post) => (  
 
                 <ResumeItem>
-                    <ResumeItemTitle>{postList[0].title}</ResumeItemTitle>
-                    <ResumeItemComment>{postList[0].body}</ResumeItemComment>
+                    <ResumeItemTitle>{post.title}</ResumeItemTitle>
+                    <ResumeItemComment>{post.body}</ResumeItemComment>
                     <ResumeItemBottomInfo>
                     <ResumeItemBottomPicture src="../media/icons/cog.svg"/>
                     <LightGreyText>{usersList[0].company.name}</LightGreyText>
@@ -144,7 +164,7 @@ export const Resume: FC = () => {
                 </ResumeItem>
 
                  ))
-              } 
+              }  
     
 
             <PaginationContainer>
