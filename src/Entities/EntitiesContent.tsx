@@ -18,6 +18,7 @@ const EntitiesContentContainer = styled.div`
         display: block;
         .item{
             display:flex;
+            border: 1px solid red;
             width:100%;
             &:hover {
                 box-shadow: 1px 2px 7px ${Colors.lightBlue};
@@ -104,11 +105,11 @@ export const EntitiesContent: FC = () => {
                         postList.map((post) => (
                             <MainEntities className='item'>
                                 <MiniEntities>
-                                    <ImgMiniEntities src={photoList[1]?.url} alt="api-image" />
+                                    <ImgMiniEntities src={photoList?.[1]?.url} alt="api-image" />
                                 </MiniEntities>
                                 <MiniEntitiesTwo>
                                     <TitleEntities>{post.title}</TitleEntities>
-                                    <DescriptionEntities>{usersList[1]?.address.city} {usersList[1].address.street} {usersList[1].address.zipcode}</DescriptionEntities>
+                                    <DescriptionEntities>{usersList?.[1]?.address.city} {usersList?.[1]?.address.street} {usersList?.[1]?.address.zipcode}</DescriptionEntities>
                                 </MiniEntitiesTwo>
                             </MainEntities>
                         ))
